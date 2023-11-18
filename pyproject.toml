@@ -310,6 +310,8 @@ markers = [
   "kinesis",
   "mongodb",
   "pymongo",
+  "python",
+  "shell",
   "slow",
 ]
 
