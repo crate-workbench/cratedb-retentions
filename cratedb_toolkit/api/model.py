@@ -18,7 +18,7 @@ class ClientBundle:
 
     adapter: DatabaseAdapter
     dbapi: crate.client.connection.Connection
-    sqlalchemy: sa.Engine
+    sqlalchemy: sa.engine.Engine
 
 
 class ClusterBase(abc.ABC):
