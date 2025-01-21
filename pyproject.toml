@@ -163,7 +163,7 @@ optional-dependencies.kinesis = [
   "lorrystream[carabas]>=0.0.6",
 ]
 optional-dependencies.mongodb = [
-  "commons-codec[mongodb,zyp]>=0.0.21",
+  "commons-codec[mongodb,zyp]>=0.0.22",
   "cratedb-toolkit[io]",
   "orjson>=3.3.1,<4",
   "pymongo>=3.10.1,<4.10",
@@ -192,8 +192,10 @@ optional-dependencies.service = [
 optional-dependencies.test = [
   "cratedb-toolkit[testing]",
   "httpx<0.29",
-  "pueblo[dataframe]",
-  "pytest<9",
+  "ipywidgets<9",
+  "notebook<8",
+  "pueblo[dataframe,notebook]>=0.0.11",
+  "pytest>=8,<9",
   "pytest-cov<7",
   "pytest-mock<4",
   "responses<0.26",
@@ -288,7 +290,7 @@ lint.per-file-ignores."tests/info/test_http.py" = [ "E402" ]
 [tool.pytest.ini_options]
 addopts = """
   -rfEXs -p pytester --strict-markers --verbosity=3
-  --cov --cov-report=term-missing --cov-report=xml
+  --cov=. --cov-report=term-missing --cov-report=xml
   """
 minversion = "2.0"
 log_level = "DEBUG"
@@ -308,6 +310,8 @@ markers = [
   "kinesis",
   "mongodb",
   "pymongo",
+  "python",
+  "shell",
   "slow",
 ]
 
@@ -325,6 +329,7 @@ show_missing = true
 [tool.mypy]
 packages = [ "cratedb_toolkit" ]
 exclude = [
+  "cratedb_toolkit/adapter/pymongo/",
 ]
 check_untyped_defs = true
 ignore_missing_imports = true

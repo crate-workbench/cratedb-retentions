@@ -6,12 +6,12 @@ which is an extremely fast Python package and project manager.
 
 Install package with only [fundamental dependencies].
 ```shell
-uv pip install --upgrade 'cratedb-toolkit'
+uv pip install --upgrade 'cratedb-toolkit' --prerelease=allow
 ```
 
 Install package including [full dependencies] and [all subsystems].
 ```shell
-uv pip install --upgrade 'cratedb-toolkit[all]'
+uv pip install --upgrade 'cratedb-toolkit[all]' --prerelease=allow
 ```
 
 Verify installation.
